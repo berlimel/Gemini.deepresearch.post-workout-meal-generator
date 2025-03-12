@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Post-Workout Meal Suggestions</title>
+</head>
+<body>
+
+<h1>Post-Workout Meal Suggestions</h1>
+
+<p>Select your workout:</p>
+
+<select id="workoutType">
+  <option value="">--Select--</option>
+  <option value="weightlifting">Weightlifting</option>
+  <option value="swimming">Swimming</option>
+  <option value="biking">Biking</option>
+  <option value="running">Running</option>
+</select>
+
+<button onclick="generateMeal()">Generate Meal</button>
+
+<div id="mealSuggestion"></div>
+
+<script>
+function generateMeal() {
+  var workout = document.getElementById("workoutType").value;
+  var meals = {
+    weightlifting:,
+    swimming:,
+    biking:,
+    running:
+  };
+
+  if (workout) {
+    var randomIndex = Math.floor(Math.random() * meals[workout].length);
+    document.getElementById("mealSuggestion").innerHTML = "Your suggested meal: " + meals[workout][randomIndex];
+  } else {
+        document.getElementById("mealSuggestion").innerHTML = "Please select a workout type.";
+    }
+  }
+  </script>
+
+  </body>
+  </html>
